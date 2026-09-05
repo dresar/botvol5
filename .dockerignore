@@ -1,0 +1,51 @@
+# Node modules and dependencies
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# WhatsApp session data (will be mounted or created at runtime)
+.wwebjs_auth
+
+# Git related
+.git
+.gitignore
+
+# Docker related
+Dockerfile
+.dockerignore
+docker-compose.yml
+
+# Logs
+logs
+*.log
+
+# QR codes (will be generated at runtime)
+qr_codes
+
+# Development files
+.vscode
+.idea
+*.md
+LICENSE
+
+# Test files
+test
+tests
+__tests__
+
+# Database files (will be mounted or created at runtime)
+*.db
+*.sqlite
+
+# Temporary files
+tmp
+temp
+.DS_Store

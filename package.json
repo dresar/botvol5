@@ -1,0 +1,79 @@
+{
+  "name": "whatsapp-bot-grup-optimized",
+  "version": "1.0.0",
+  "description": "Bot WhatsApp ringan untuk VPS spesifikasi rendah (1GB RAM)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --max-old-space-size=512 --expose-gc index.js",
+    "start:fast": "node --max-old-space-size=512 --expose-gc index.js",
+    "start:optimized": "node start-optimized.js",
+    "start:clean": "node start-optimized.js --clean-session",
+    "dev": "nodemon --max-old-space-size=512 --expose-gc index.js",
+    "pm2": "pm2 start ecosystem.config.js --env production",
+    "pm2:dev": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop whatsapp-bot-optimized",
+    "pm2:restart": "pm2 restart whatsapp-bot-optimized",
+    "pm2:logs": "pm2 logs whatsapp-bot-optimized",
+    "pm2:monit": "pm2 monit",
+    "cleanup": "rm -rf qr_codes/*.png && sqlite3 bot_data.db 'VACUUM;'",
+    "memory-check": "node -e 'console.log(process.memoryUsage())'",
+    "monitoring-report": "node monitoring-report.js",
+    "clean-cache": "rimraf .wwebjs_auth/session/Default/Cache",
+    "clean-cache-selective": "node clean-cache-selective.js",
+    "clean-session": "node clean-session.js",
+    "docker:build": "docker build -t luckytechhubbot .",
+    "docker:run": "docker run -e SESSION_ID=$SESSION_ID luckytechhubbot",
+    "docker:setup": "node scripts/docker-setup.js",
+    "docker:compose": "docker-compose up -d",
+    "docker:compose:down": "docker-compose down"
+  },
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "grup",
+    "nodejs",
+    "vps",
+    "optimized",
+    "low-memory"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.2.1",
+    "axios": "^1.10.0",
+    "better-sqlite3": "^12.2.0",
+    "buffer-crc32": "^1.0.0",
+    "dotenv": "^17.2.0",
+    "groq-sdk": "^0.26.0",
+    "moment": "^2.30.1",
+    "node-cache": "^5.1.2",
+    "node-cron": "^3.0.3",
+    "puppeteer": "^13.7.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0",
+    "sentiment": "^5.0.2",
+    "sqlite3": "^5.1.7",
+    "uuid": "^9.0.1",
+    "whatsapp-web.js": "^1.23.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "optionalDependencies": {
+    "cheerio": "^1.0.0-rc.12",
+    "compromise": "^14.9.0",
+    "figlet": "^1.8.1",
+    "jimp": "^0.22.12",
+    "mathjs": "^11.9.1",
+    "node-fetch": "^3.3.2"
+  },
+  "config": {
+    "memory_limit": "512",
+    "max_old_space_size": "512"
+  }
+}

@@ -1,0 +1,27 @@
+2025-07-12T11:35:51.851Z - Unhandled Rejection: Error: Failed to launch the browser process!
+
+
+TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
+
+2025-07-12T11:36:58.980Z - Unhandled Rejection: Error: Failed to launch the browser process!
+
+
+TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
+
+2025-07-12T11:37:21.012Z - Unhandled Rejection: Error: Failed to launch the browser process!
+
+
+TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
+
+2025-07-12T11:39:39.727Z - Unhandled Rejection: Error: Failed to launch the browser process!
+
+
+TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
+
+2025-07-12T11:57:25.889Z - Unhandled Rejection: TypeError: Cannot read properties of null (reading '1')
+2025-07-12T11:58:47.271Z - Unhandled Rejection: TypeError: Cannot read properties of null (reading '1')
+2025-07-12T11:59:10.110Z - Unhandled Rejection: ProtocolError: Protocol error (Runtime.callFunctionOn): Target closed.
+2025-07-12T12:00:09.393Z - Unhandled Rejection: TypeError: Cannot read properties of null (reading '1')
+2025-07-12T12:02:16.838Z - Unhandled Rejection: ProtocolError: Protocol error (Runtime.callFunctionOn): Target closed.
+2025-07-12T12:30:09.958Z - Unhandled Rejection: Error: net::ERR_NAME_NOT_RESOLVED at https://web.whatsapp.com/
+2025-08-19T09:22:43.237Z - Unhandled Rejection: ProtocolError: Protocol error (Runtime.callFunctionOn): Target closed.

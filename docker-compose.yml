@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  whatsapp-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: whatsapp-bot-grup
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - NODE_OPTIONS=--max-old-space-size=512
+      # Tambahkan variabel lingkungan dari .env file
+      - SESSION_ID=${SESSION_ID:-default}
+      - ADMIN_NUMBER=${ADMIN_NUMBER}
+      - HEADLESS=true
+      - QR_TIMEOUT=60000
+      - AUTHENTICATION_TIMEOUT=120000
+      - RESTART_ON_AUTH_FAILURE=true
+    volumes:
+      # Persistent storage untuk sesi WhatsApp
+      - whatsapp_auth:/app/.wwebjs_auth
+      # Persistent storage untuk database
+      - whatsapp_data:/app/bot_data.db
+      # Persistent storage untuk QR codes
+      - whatsapp_qr:/app/qr_codes
+      # Persistent storage untuk logs
+      - whatsapp_logs:/app/logs
+    # Uncomment jika bot memiliki antarmuka web atau API
+    # ports:
+    #   - "8080:8080"
+
+# Buat volume untuk data persisten
+volumes:
+  whatsapp_auth:
+    driver: local
+  whatsapp_data:
+    driver: local
+  whatsapp_qr:
+    driver: local
+  whatsapp_logs:
+    driver: local
